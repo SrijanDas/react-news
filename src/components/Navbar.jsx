@@ -16,7 +16,7 @@ export default function Navbar() {
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Navbar
+            ReactNews
           </Link>
           <button
             className="navbar-toggler"

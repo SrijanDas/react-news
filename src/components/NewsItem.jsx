@@ -7,7 +7,9 @@ export default function NewsItem({ article }) {
   return (
     <div className="col-4 my-2">
       <div className="card mt-3">
-        <div className="card-header text-white bg-primary">{source.name}</div>
+        <div className="card-header text-white bg-primary">
+          {source.name ? source.name : "Source: unknown"}
+        </div>
         <img
           src={
             urlToImage
