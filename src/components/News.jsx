@@ -6,7 +6,7 @@ import Spinner from "./Spinner";
 import Error from "./Error";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-export default function News() {
+export default function News({ setProgress }) {
   const { category } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [articles, setArticles] = useState([]);
@@ -18,6 +18,7 @@ export default function News() {
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true);
+      setProgress(10);
       try {
         const res = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
@@ -26,14 +27,16 @@ export default function News() {
         setArticles(res.data.articles);
         setTotalResults(res.data.totalResults);
         setPage(2);
+        setProgress(70);
       } catch (error) {
         console.log(error);
         setRateLimited(true);
       }
       setLoading(false);
+      setProgress(100);
     };
     fetchNews();
-  }, [category, API_KEY]);
+  }, [category, API_KEY, setProgress]);
 
   const fetchMoreData = async () => {
     setPage(page + 1);
