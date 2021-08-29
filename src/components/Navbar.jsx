@@ -16,7 +16,7 @@ export default function Navbar() {
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            ReactNews
+            <span class="navbar-brand mb-0 h1">ReactNews</span>
           </Link>
           <button
             className="navbar-toggler"
@@ -55,6 +55,11 @@ export default function Navbar() {
                   type="checkbox"
                   id="flexSwitchCheckDefault"
                 />
+              </div>
+              <div className="nav-item">
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
               </div>
             </div>
           </div>
