@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
+import Error from "./Error";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News() {
@@ -19,7 +20,7 @@ export default function News() {
       setLoading(true);
       try {
         const res = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}&page=1`
+          `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`
         );
 
         setArticles(res.data.articles);
@@ -54,12 +55,7 @@ export default function News() {
       ) : (
         <>
           {rateLimited ? (
-            <>
-              <p className="fs-1 text-center">Something went wrong! 😟</p>
-              <p className="fs-3 text-center">
-                Please try again after sometime
-              </p>
-            </>
+            <Error />
           ) : (
             <p className="fs-1 text-center">
               Top <b> {String(category).toUpperCase()} </b> headlines - Total:
