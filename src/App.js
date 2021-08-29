@@ -9,12 +9,13 @@ import { useState } from "react";
 
 function App() {
   const [progress, setProgress] = useState(0);
-  const [theme, setTheme] = useState("light");
-
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("darkMode"))
+  );
   return (
     <div className="app">
       <Router>
-        <Navbar theme={theme} setTheme={setTheme} />
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <LoadingBar
           height={3}
           color="#f11946"

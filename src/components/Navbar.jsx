@@ -1,7 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ darkMode, setDarkMode }) {
+  const location = useLocation();
+  const [active, setActive] = useState(
+    location.pathname.split("/").slice(-1).pop()
+  );
+
+  const handleChange = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem("darkMode", !darkMode);
+  };
+  const theme = darkMode ? "dark" : "light";
   const navlinks = [
     "General",
     "Business",
@@ -11,12 +21,22 @@ export default function Navbar() {
     "Sports",
     "Technology",
   ];
+
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <nav
+        className={`navbar fixed-top navbar-expand-lg navbar-${theme} bg-${theme}`}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <span class="navbar-brand mb-0 h1">ReactNews</span>
+            <span
+              onClick={() => {
+                setActive("");
+              }}
+              className="navbar-brand mb-0 h1 text-danger"
+            >
+              ReactNews
+            </span>
           </Link>
           <button
             className="navbar-toggler"
@@ -32,9 +52,17 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {navlinks.map((navlink, index) => (
-                <li className="nav-item" key={index}>
+                <li
+                  className="nav-item"
+                  key={index}
+                  onClick={() => {
+                    setActive(navlink.toLowerCase());
+                  }}
+                >
                   <Link
-                    className="nav-link"
+                    className={`nav-link ${
+                      active === navlink.toLowerCase() ? "active" : ""
+                    }`}
                     to={`/news/${navlink.toLowerCase()}`}
                   >
                     {navlink}
@@ -45,7 +73,9 @@ export default function Navbar() {
             <div className="d-flex align-items-center">
               <div className="form-check form-switch">
                 <label
-                  className="form-check-label"
+                  className={`form-check-label text-${
+                    darkMode ? "light" : "secondary"
+                  }`}
                   htmlFor="flexSwitchCheckDefault"
                 >
                   Dark Mode
@@ -54,6 +84,8 @@ export default function Navbar() {
                   className="form-check-input"
                   type="checkbox"
                   id="flexSwitchCheckDefault"
+                  onChange={handleChange}
+                  checked={darkMode}
                 />
               </div>
               <div className="nav-item">

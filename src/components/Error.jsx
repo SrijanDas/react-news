@@ -3,7 +3,7 @@ import ErrorGif from "../assets/error.gif";
 
 export default function Error() {
   return (
-    <div className="container mt-4">
+    <div className="container" style={{ marginTop: "8rem" }}>
       <img
         src={ErrorGif}
         alt="..."

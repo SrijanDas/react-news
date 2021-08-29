@@ -5,15 +5,15 @@ export default function About({ setProgress }) {
     setProgress(100);
   }, [setProgress]);
   return (
-    <div class="about-section paddingTB60 gray-bg">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-7 col-sm-6">
-            <div class="about-title clearfix">
+    <div className="about-section paddingTB60 gray-bg">
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-7 col-sm-6">
+            <div className="about-title clearfix">
               <h1>
                 About <span>React News</span>
               </h1>
-              <p class="about-paddingB">
+              <p className="about-paddingB">
                 React News shows you top news headlines of different categories.
               </p>
               <p>
@@ -29,7 +29,7 @@ export default function About({ setProgress }) {
                   </a>
                 </b>
               </p>
-              <div class="about-icons">
+              <div className="about-icons">
                 <ul>
                   <li>
                     <a
@@ -39,7 +39,7 @@ export default function About({ setProgress }) {
                     >
                       <i
                         id="social-fb"
-                        class="fa fa-github-square fa-3x social"
+                        className="fa fa-github-square fa-3x social"
                       ></i>
                     </a>
                   </li>
@@ -52,7 +52,7 @@ export default function About({ setProgress }) {
                     >
                       <i
                         id="social-em"
-                        class="fa fa-envelope-square fa-3x social"
+                        className="fa fa-envelope-square fa-3x social"
                       ></i>
                     </a>
                   </li>
@@ -60,8 +60,8 @@ export default function About({ setProgress }) {
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-sm-6">
-            <div class="about-img">
+          <div className="col-md-5 col-sm-6">
+            <div className="about-img">
               <img
                 src="https://devitems.com/preview/appmom/img/mobile/2.png"
                 alt=""
