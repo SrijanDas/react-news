@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import "./About.css";
 export default function About({ setProgress }) {
+  const darkMode = JSON.parse(localStorage.getItem("darkMode"));
+
   useEffect(() => {
     setProgress(100);
   }, [setProgress]);
   return (
-    <div className="about-section paddingTB60 gray-bg">
+    <div
+      className={`about-section paddingTB60 ${
+        darkMode ? "dark-bg" : "gray-bg"
+      }`}
+    >
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-7 col-sm-6">

@@ -7,6 +7,8 @@ import Error from "./Error";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News({ setProgress }) {
+  const darkMode = JSON.parse(localStorage.getItem("darkMode"));
+
   const { category } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [articles, setArticles] = useState([]);
@@ -52,7 +54,14 @@ export default function News({ setProgress }) {
   };
 
   return (
-    <div style={{ marginTop: "5rem" }}>
+    <div
+      style={{
+        height: "auto",
+        minHeight: "100vh",
+        backgroundColor: darkMode ? "#181b1f" : "white",
+        padding: "5rem 0",
+      }}
+    >
       {loading ? (
         <Spinner />
       ) : (
@@ -60,7 +69,9 @@ export default function News({ setProgress }) {
           {rateLimited ? (
             <Error />
           ) : (
-            <p className="fs-1 text-center">
+            <p
+              className={`fs-1 text-center text-${darkMode ? "secondary" : ""}`}
+            >
               Top <b> {String(category).toUpperCase()} </b> headlines - Total:
               <b>{totalResults}</b>{" "}
             </p>
