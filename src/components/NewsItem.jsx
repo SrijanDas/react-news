@@ -9,7 +9,7 @@ export default function NewsItem({ article }) {
   const { source, author, title, description, url, urlToImage, publishedAt } =
     article;
   return (
-    <div className="col-4 my-2">
+    <div className="col-sm-6 col-md-4 my-2">
       {source.name ? (
         <div
           style={{
@@ -57,7 +57,7 @@ export default function NewsItem({ article }) {
               darkMode ? "secondary" : "outline-dark"
             }`}
           >
-            View More
+            View Full Article
           </a>
         </div>
       </div>

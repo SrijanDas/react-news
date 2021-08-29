@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./About.css";
 export default function About({ setProgress }) {
   const darkMode = JSON.parse(localStorage.getItem("darkMode"));
+  const textColor = darkMode ? "light" : "";
 
   useEffect(() => {
     setProgress(100);
@@ -16,13 +17,13 @@ export default function About({ setProgress }) {
         <div className="row">
           <div className="col-md-7 col-sm-6">
             <div className="about-title clearfix">
-              <h1>
+              <h1 className={`text-${textColor}`}>
                 About <span>React News</span>
               </h1>
               <p className="about-paddingB">
                 React News shows you top news headlines of different categories.
               </p>
-              <p>
+              <p className={`text-${textColor}`}>
                 This website was made with ❤ by{" "}
                 <b>
                   <a
