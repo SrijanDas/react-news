@@ -2,15 +2,15 @@
 
 React News shows you top news headlines of different categories.
 
-![App Screenshot](homepage.jpg)
+![App Screenshot](homepage.png)
 
 ## Tech Stack
 
 **Client:** HTML, CSS, React, Bootstrap
 
-**Server:** Nodejs, Express
+<!-- **Server:** Nodejs, Express
 
-**Database:** MongoDb
+**Database:** MongoDb -->
 
 ## Run Locally
 
@@ -29,7 +29,7 @@ cd react-news
 Get your api key from [News API](https://newsapi.org/). Create a `.env` file in the root directory, copy your api key and paste it in that file.
 
 ```
-REACT_APP_API_KEY=your api key
+REACT_APP_API_KEY=your_api_key
 ```
 
 Install dependencies
