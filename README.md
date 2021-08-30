@@ -46,6 +46,11 @@ npm start
 
 That's it👍
 
+## Features
+
+- Light/dark mode toggle
+- Infinite scroll
+
 ## Thank you 😃
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://srijan-das.web.app/)
