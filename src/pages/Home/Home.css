@@ -1,0 +1,12 @@
+.home {
+  min-height: 100vh;
+  height: auto;
+  padding: 5rem 0;
+}
+.home.homeDark {
+  background-color: #181b1f;
+}
+
+.home.homeLight {
+  background-color: white;
+}

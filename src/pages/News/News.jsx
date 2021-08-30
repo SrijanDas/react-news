@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import NewsItem from "./NewsItem";
-import Spinner from "./Spinner";
-import Error from "./Error";
+import NewsItem from "../../components/NewsItem";
+import Spinner from "../../components/Spinner";
+import Error from "../../components/Error";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News({ setProgress }) {

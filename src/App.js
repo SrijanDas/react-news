@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
-
+import "./App.css";
 import Navbar from "./components/Navbar";
-import News from "./components/News";
-import About from "./components/About";
-import Home from "./components/Home";
+import News from "./pages/News/News";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
 import { useState } from "react";
 
 function App() {
